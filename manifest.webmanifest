@@ -1,0 +1,17 @@
+{
+  "name": "Tarot Journal",
+  "short_name": "Tarot",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f3f8",
+  "theme_color": "#28233b",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#28233b">
+<meta name="description" content="写真とリーディングを静かに記録する、個人用タロットジャーナル。">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<title>Tarot Journal</title>
+</head>
+<body>
+<div class="app-shell">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">✦</div>
+      <div><div class="brand-title">Tarot Journal</div><div class="brand-sub">自分のリーディングを記録する</div></div>
+    </div>
+    <button class="icon-btn" id="settingsBtn" aria-label="設定・バックアップ">⚙</button>
+  </header>
+
+  <main>
+    <section id="homeView" class="view active">
+      <div class="hero">
+        <div class="eyebrow">YOUR PRIVATE JOURNAL</div>
+        <h1>カードの記録を、<br>静かに残す。</h1>
+        <p>写真と解釈を、日付ごとに。</p>
+        <button class="primary-btn" id="newReadingBtn">＋ 新しいリーディング</button>
+      </div>
+      <div class="section-heading"><div><h2>記録の一覧</h2><p id="recordCount">0件の記録</p></div></div>
+      <div class="search-row">
+        <input id="searchInput" type="search" placeholder="テーマ・カード名・メモを検索">
+        <select id="tagFilter"><option value="">すべてのタグ</option></select>
+      </div>
+      <div id="recordsList" class="records-list"></div>
+      <div id="emptyState" class="empty-state"><div class="empty-symbol">☾</div><h3>まだ記録がありません</h3><p>最初のリーディングを記録しましょう。</p></div>
+    </section>
+
+    <section id="editorView" class="view">
+      <div class="view-heading"><button class="back-btn" id="backBtn">← 一覧</button><span id="editorTitle">新しい記録</span></div>
+      <form id="readingForm">
+        <input type="hidden" id="recordId">
+        <label class="field-label" for="dateInput">日付</label>
+        <input class="field" id="dateInput" type="date" required>
+        <label class="field-label" for="titleInput">テーマ・質問 <span class="optional">任意</span></label>
+        <input class="field" id="titleInput" type="text" placeholder="今日のテーマ、質問など">
+        <label class="field-label" for="spreadInput">展開方法 <span class="optional">任意</span></label>
+        <input class="field" id="spreadInput" type="text" placeholder="例：ワンオラクル、3枚引き、ケルト十字">
+        <label class="field-label">展開写真</label>
+        <div class="photo-area" id="photoArea">
+          <img id="photoPreview" alt="展開写真のプレビュー" hidden>
+          <div id="photoPlaceholder"><div class="photo-icon">▧</div><strong>カードの写真を追加</strong><small>撮影または端末から選択</small></div>
+          <div class="photo-actions">
+            <label class="photo-btn" for="cameraInput">📷 撮影</label>
+            <label class="photo-btn" for="fileInput">画像を選ぶ</label>
+          </div>
+        </div>
+        <input id="cameraInput" type="file" accept="image/*" capture="environment" hidden>
+        <input id="fileInput" type="file" accept="image/*" hidden>
+        <div class="field-label cards-label">引いたカード <span class="optional">メモ欄へ自動挿入</span></div>
+        <div id="cardsContainer"></div>
+        <button class="secondary-btn add-card-btn" id="addCardBtn" type="button">＋ カードを追加</button>
+        <label class="field-label" for="notesInput">解釈・リーディングメモ</label>
+        <textarea class="notes" id="notesInput" placeholder="カードから感じたこと、解釈、全体の流れなど自由に記録。カード情報は上で入力すると、ここに自動で反映されます。"></textarea>
+        <label class="field-label" for="tagsInput">タグ <span class="optional">任意・カンマ区切り</span></label>
+        <input class="field" id="tagsInput" type="text" placeholder="仕事, 人間関係, 自分">
+        <div class="form-actions"><button class="primary-btn" type="submit">記録を保存</button><button class="danger-text" id="deleteBtn" type="button" hidden>この記録を削除</button></div>
+      </form>
+    </section>
+
+    <section id="detailView" class="view">
+      <div class="view-heading"><button class="back-btn" id="detailBackBtn">← 一覧</button><span>記録の詳細</span></div>
+      <div id="detailContent"></div>
+    </section>
+  </main>
+  <footer>このアプリの記録は、この端末のブラウザ内に保存されます。</footer>
+</div>
+
+<dialog id="settingsDialog">
+  <div class="dialog-head"><h2>データ・設定</h2><button class="icon-btn" id="closeSettings">×</button></div>
+  <p class="dialog-note">記録と写真は端末内に保存されます。ブラウザのデータを消す前にバックアップしてください。</p>
+  <button class="secondary-btn full" id="exportBtn">バックアップを書き出す（JSON）</button>
+  <label class="secondary-btn full import-label" for="importInput">バックアップを復元する</label>
+  <input id="importInput" type="file" accept=".json,application/json" hidden>
+  <div class="divider"></div>
+  <button class="danger-text full" id="clearAllBtn">すべての記録を削除</button>
+</dialog>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
