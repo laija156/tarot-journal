@@ -11,3 +11,12 @@ dialog{border:0;border-radius:18px;width:min(440px,calc(100% - 32px));padding:20
 .mic-btn{background:var(--lav);border:1px solid #d8cde4;border-radius:9px;color:var(--purple-dark);font-size:12px;padding:7px 10px;white-space:nowrap}.card-memo-controls{display:flex;align-items:flex-start;gap:8px;margin-top:9px}.card-memo{flex:1;width:100%;min-height:86px;resize:vertical;border:1px solid var(--line);border-radius:9px;background:#faf9fc;padding:10px;line-height:1.65;color:var(--ink);outline:none;margin:0}.card-memo:focus{border-color:var(--purple)}.detail-card{padding:10px 0;border-bottom:1px solid var(--line)}.detail-card:last-child{border-bottom:0}.detail-card-title{font-weight:600}.detail-card-memo{white-space:pre-wrap;line-height:1.7;color:var(--muted);font-size:14px;margin-top:5px}
 @media(min-width:600px){.app-shell{padding:0 28px 35px}.hero{padding:34px}.record-thumb{width:115px;height:125px}.hero h1{font-size:28px}}
 @media(max-width:420px){.card-memo-controls{flex-direction:column}.card-memo{width:100%}.mic-btn{align-self:flex-end}}
+
+/* V8 date range filter */
+.date-filter-row{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:end;margin:-5px 0 15px}
+.date-filter-row label{display:flex;flex-direction:column;gap:4px;font-size:11px;color:var(--muted)}
+.date-filter-row input{min-width:0;width:100%;background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 7px;color:var(--ink);font:inherit;font-size:12px}
+.date-clear-btn{border:1px solid #d8cde4;background:#fff;color:var(--purple);border-radius:9px;padding:9px 10px;font-size:11px;white-space:nowrap}
+.date-filter-hint{grid-column:1/-1;margin:0;color:var(--muted);font-size:10px}
+.record-card[hidden]{display:none}
+@media(max-width:420px){.date-filter-row{grid-template-columns:1fr 1fr}.date-clear-btn{grid-column:1/-1}.date-filter-hint{grid-column:1/-1}}

@@ -14,11 +14,10 @@
 <div class="app-shell">
   <header class="topbar">
     <button class="brand-home" id="homeBtn" aria-label="ホーム・記録一覧へ">
-      <span class="brand"><span class="brand-mark">✦</span><span><span class="brand-title">Tarot Journal</span><span class="brand-sub">自分のリーディングを記録する</span></span>
+      <span class="brand"><span class="brand-mark">✦</span><span><span class="brand-title">Tarot Journal</span><span class="brand-sub">自分のリーディングを記録する</span></span></span>
     </button>
     <button class="icon-btn" id="menuBtn" aria-label="メニューを開く">☰</button>
   </header>
-
   <main>
     <section id="homeView" class="view active">
       <div class="hero">
@@ -35,7 +34,6 @@
       <div id="recordsList" class="records-list"></div>
       <div id="emptyState" class="empty-state"></div>
     </section>
-
     <section id="editorView" class="view">
       <div class="view-heading"><button class="back-btn" id="backBtn">← 一覧</button><span id="editorTitle">新しい記録</span></div>
       <form id="readingForm">
@@ -66,7 +64,6 @@
         <div class="form-actions"><button class="primary-btn" type="submit">記録を保存</button><button class="danger-text" id="deleteBtn" type="button" hidden>この記録を削除</button></div>
       </form>
     </section>
-
     <section id="detailView" class="view">
       <div class="view-heading"><button class="back-btn" id="detailBackBtn">← 一覧</button><span>記録の詳細</span></div>
       <div id="detailContent"></div>
@@ -74,7 +71,6 @@
   </main>
   <footer>このアプリの記録は、この端末のブラウザ内に保存されます。</footer>
 </div>
-
 <dialog id="menuDialog">
   <div class="dialog-head"><h2>メニュー</h2><button class="icon-btn" id="closeMenu" aria-label="閉じる">×</button></div>
   <button class="secondary-btn full" id="menuHomeBtn">ホーム・記録一覧</button>
@@ -92,5 +88,6 @@
 </dialog>
 <div id="toast" class="toast" role="status"></div>
 <script src="app.js"></script>
+<script src="enhancements.js"></script>
 </body>
 </html>
