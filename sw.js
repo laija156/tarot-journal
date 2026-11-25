@@ -1,6 +1,6 @@
-const CACHE = 'tarot-journal-v8';
-const ASSETS = ['./', './index.html', './styles.css', './app.js', './enhancements.js', './manifest.webmanifest', './icon.svg'];
-const NETWORK_FIRST = ['./', './index.html', './app.js', './enhancements.js', './styles.css'];
+const CACHE = 'tarot-journal-v9';
+const ASSETS = ['./', './index.html', './styles.css', './app.js', './enhancements.js', './notebook-addon.js', './manifest.webmanifest', './icon.svg'];
+const NETWORK_FIRST = ['./', './index.html', './app.js', './enhancements.js', './notebook-addon.js', './styles.css'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
 });
