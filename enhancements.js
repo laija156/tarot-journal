@@ -15,7 +15,7 @@
     empress:'L’Impératrice', emperor:'L’Empereur', hierophant:'Le Pape',
     lovers:'L’Amoureux', chariot:'Le Chariot', strength:'La Force', hermit:'L’Hermite',
     wheel:'La Roue de Fortune', justice:'La Justice', hangedMan:'Le Pendu',
-    death:'Arcane sans nom', temperance:'Tempérance', devil:'Le Diable',
+    death:'L’Arcane sans nom', temperance:'Tempérance', devil:'Le Diable',
     tower:'La Maison Dieu', star:'L’Étoile', moon:'La Lune', sun:'Le Soleil',
     judgement:'Le Jugement', world:'Le Monde'
   };

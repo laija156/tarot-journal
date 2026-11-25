@@ -3,7 +3,7 @@ const DB_NAME='TarotJournalDB', DB_VERSION=1, STORE='readings';
 const $=id=>document.getElementById(id);
 const SUITS={rws:['ワンド','カップ','ソード','ペンタクル'],marseille:['バトン','杯','剣','金貨']};
 const MAJOR=[
- ['fool','愚者','愚者'],['magician','魔術師','魔術師'],['highPriestess','女教皇','女司祭'],['empress','女帝','女帝'],['emperor','皇帝','皇帝'],['hierophant','法王','教皇'],['lovers','恋人','恋人'],['chariot','戦車','戦車'],['strength','力','力'],['hermit','隠者','隠者'],['wheel','運命の輪','運命の輪'],['justice','正義','正義'],['hangedMan','吊るされた男','吊るされた男'],['death','死神','名のないアルカナ'],['temperance','節制','節制'],['devil','悪魔','悪魔'],['tower','塔','神の家'],['star','星','星'],['moon','月','月'],['sun','太陽','太陽'],['judgement','審判','審判'],['world','世界','世界']
+ ['fool','愚者','愚者'],['magician','魔術師','魔術師'],['highPriestess','女教皇','女司祭'],['empress','女帝','女帝'],['emperor','皇帝','皇帝'],['hierophant','法王','教皇'],['lovers','恋人','恋人'],['chariot','戦車','戦車'],['strength','力','力'],['hermit','隠者','隠者'],['wheel','運命の輪','運命の輪'],['justice','正義','正義'],['hangedMan','吊るされた男','吊るされた男'],['death','死神','無名／死'],['temperance','節制','節制'],['devil','悪魔','悪魔'],['tower','塔','神の家'],['star','星','星'],['moon','月','月'],['sun','太陽','太陽'],['judgement','審判','審判'],['world','世界','世界']
 ];
 const COURT=[['page','ペイジ','小姓'],['knight','ナイト','騎士'],['queen','クイーン','女王'],['king','キング','王']];
 const MAJOR_ROMAN=['0','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XXI'];
